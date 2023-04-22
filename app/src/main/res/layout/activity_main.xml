@@ -12,6 +12,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вариант 1.\nTuiCardLarge - общая viewgroup для любого кол-ва элементов content и по одному header и footer. Этот вариант не успел добить размеры"
+            android:layout_margin="20dp"
+            android:textSize="14sp"/>
         <!--
                     Вариант 1
                     TuiCardLarge - общая viewgroup для любого кол-ва элементов content
@@ -49,6 +55,12 @@
 
         </com.eschernov.tinkoffsolutioncup.TuiCardLarge>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вариант 2.\nПростая реализация, где каждый элемент добавляется в обычную реализацию viewgroup, например cardview."
+            android:layout_margin="20dp"
+            android:textSize="14sp"/>
         <!--
                     Вариант 2
                     Простая реализация, где каждый элемент добавляется в обычную реализацию
