@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.cardview.widget.CardView
 import androidx.core.view.children
+import androidx.core.view.marginRight
 
 class TuiCardLarge @JvmOverloads constructor(
     context: Context,
@@ -23,9 +24,9 @@ class TuiCardLarge @JvmOverloads constructor(
 
         header?.let {
             it.layout(
-                defaultPadding,
+                defaultPadding ,
                 currentTopPosition + paddingTop,
-                it.measuredWidth,
+                it.measuredWidth -(paddingLeft + it.paddingRight + it.marginRight),
                 currentTopPosition + paddingBottom + it.measuredHeight,
             )
             currentTopPosition = paddingTop + paddingBottom + it.measuredHeight
@@ -50,8 +51,7 @@ class TuiCardLarge @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val width =
-            MeasureSpec.getSize(widthMeasureSpec) - paddingStart - paddingEnd - defaultPadding
+        val width = MeasureSpec.getSize(widthMeasureSpec) - paddingStart - paddingEnd
         var height = 0
         children.asIterable().map { view ->
 
@@ -61,8 +61,8 @@ class TuiCardLarge @JvmOverloads constructor(
         height += marginBetweenBlocks * 4
 
         setMeasuredDimension(
-            width + paddingLeft + paddingRight + defaultPadding * 2,
-            height + paddingLeft + paddingRight + defaultPadding * 2
+            width + paddingLeft + paddingRight,
+            height + paddingLeft + paddingRight
         )
     }
 
