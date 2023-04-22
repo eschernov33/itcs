@@ -1,18 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--
+                    Вариант 1
+                    TuiCardLarge - общая viewgroup для любого кол-ва элементов content
+                    и по одному header и footer.
+                    Этот вариант не успел добить размеры
+        -->
+        <com.eschernov.tinkoffsolutioncup.TuiCardLarge
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:cardCornerRadius="20dp">
+
+            <com.eschernov.tinkoffsolutioncup.TuiCardHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:accessoryText="Button"
+                app:accessoryType="button"
+                app:cardCornerRadius="24dp"
+                app:icon="@drawable/tui_avatar"
+                app:subtitle="With subtitle"
+                app:title="Header" />
+
+            <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentDescription="Description"
+                app:contentTitle="Title" />
+
+            <com.eschernov.tinkoffsolutioncup.TuiCardFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:footerButtonText="Button" />
+
+        </com.eschernov.tinkoffsolutioncup.TuiCardLarge>
+
+        <!--
+                    Вариант 2
+                    Простая реализация, где каждый элемент добавляется в обычную реализацию
+                    viewgroup, например cardview.
+        -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp">
+
+            <com.eschernov.tinkoffsolutioncup.TuiCardHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="18dp"
+                app:cardCornerRadius="24dp"
+                app:icon="@drawable/tui_avatar"
+                app:subtitle="With subtitle"
+                app:title="Header" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="18dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="18dp"
+                    app:cardCornerRadius="24dp"
+                    app:icon="@drawable/tui_avatar"
+                    app:title="Header" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="18dp"
+                android:orientation="vertical">
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/tui_avatar"
+                    app:title="Header" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="18dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="18dp"
+                android:orientation="vertical">
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/tui_avatar"
+                    app:accessoryType="button"
+                    app:accessoryText="Button"
+                    app:title="Header" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardContent
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:contentDescription="Description"
+                    app:contentTitle="Title" />
+
+                <com.eschernov.tinkoffsolutioncup.TuiCardFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:footerButtonText="Button" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

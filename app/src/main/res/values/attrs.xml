@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TuiCardLarge">
+        <attr name="headerTitle" format="string" />
+        <attr name="headerSubtitle" format="string" />
+        <attr name="icon" format="reference" />
+        <attr name="actionButtonText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="TuiCardHeader">
+        <attr name="title" format="string" />
+        <attr name="subtitle" format="string" />
+        <attr name="accessoryIcon" format="reference" />
+        <attr name="accessoryType" format="enum">
+            <enum name="button" value="0" />
+            <enum name="icon" value="1" />
+        </attr>
+        <attr name="accessoryText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TuiCardContent">
+        <attr name="contentTitle" format="string" />
+        <attr name="contentDescription" format="string" />
+        <attr name="contentAccessory" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TuiCardFooter">
+        <attr name="footerButtonText" format="string" />
+    </declare-styleable>
+
+
+</resources>
